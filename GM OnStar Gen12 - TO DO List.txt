@@ -1,0 +1,10 @@
+TO DO list for the GM ECALL Gen12 
+------------------------------------------------------------
+- investigate ONLINE mode (Keysight) COM PORT corruption issue.	 
+- investigate Keypad test failures, due to NAD power?
+- RESOLVED (NAD on separate hub) NAD OFF causing loss of COM ports, requires reboot of PC. 
+- CAN commands VUC OUTPUT "READ"?
+- sleep tests?
+- COMPLETED label NAD Primary and Secondary tests in Keysight raw data files. 
+- add jump to NAD turn off verify for fail condition or terminate. 
+- isolate hyundai from GM. also implement common TestStand_64 folder. 

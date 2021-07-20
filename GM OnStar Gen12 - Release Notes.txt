@@ -1,0 +1,76 @@
+Release note for the GM ECALL Gen12 sequence
+------------------------------------------------------------
+The latest sequence will always be in this folder. (C:\Programs\GIT\GM\Onstar_Gen12)
+Older sequences need to be pushed to the sequence archive folder. (C:\Programs\GIT\GM\Onstar_Gen12\Sequence Archive)
+************************************************************
+Ver  - Date - Owner
+v1.0 - 8/7/19 - DJC
+	- Initial development
+v1.1 - 8/27/19 - DJC
+	- Create XNET CAN containter array to support multi up testing.
+	- Add Keypad active testing. 
+	- Add Compensator testing. 
+	- Update V2X antenna test. 
+	- Update BUB testing and commands.
+v1.2 - 10/10/19 - DJC/TG
+	- Add NAD LTE testing
+	- Add Ethernet 100 test
+	- Add Mic In to Mic Out Audio
+	- Add Audio Loopback Test
+	- Tamper detect GPIO test
+	- UART capability added, COM port added to StationGlobals.ini.
+	10/15/19 - DJC/TG
+	- Modified KEYPAD_ISENSE per Marcin's email
+	- Updated Mic-Speaker Loopback with Alex's command updates
+	- Remove the 12V option. Only 12V nominal, min and max.  
+	- Update of test limits for hot and cold conditions. 
+	- Completely remove BUB tests for 6V.
+	- In setup add 1 sec delay to BUB_PRECHARGE_CURRENT test
+	- Complete limit update for China 1GB and NA 100 
+v1.3 - 10/21/19 - DJC/TG
+       10/22/19 - DJC/TG
+	- Updates to BUB section to skip 6V testing
+	- Minor limit adjustments to China 1G	
+	- Set ethernet test to ping 4 times only
+	- Within NAD power down sub sequence, bypass console commands and root pwd if we have tested ethernet prior to NAD powerdown.  
+	- Continued limit adjustments to meet temp extreme results.
+	10/24/19 - DJC/TG
+	- GPI_TMPR_DET is now skipped as the feature has not been added to the design yet.  
+	- Correct 6V limit typo which crashed the program. Missing comma. 
+v1.4 - 11/1/19 - DJC/TG
+	- Updated loopback commands based on loadcell source code
+v1.5 - 11/15/19 DJC/TCG
+	- Modified loopback sequence and have tentative release for this test. Added 1 Gb ethernet test for China model, and any other 1 GB models.
+	- Added some delays to IO tests to achieve better repeatibily in the IO/ADC tests.
+       11/19/19 - DJC
+	- All limit files updated low limit for Audio Mute Amplitude (6.9.1) from 1 to 0.
+	- Update the NAD ON strategy. 
+       12/6/19 - TCG
+	- Combined Ethernet Test into one test group , and selecting which test via the limit file.
+	- Removed the 2nd Ethernet Test Group - 15.0.0.0
+v1.6 - 12/20/19 - DJC
+	- Add ROW variants 1GB and 100Mb to test.  
+       1/15/20 - DJC
+	- Streamline the Ethernet test for both variants
+       2/12/20 - DJC
+	- Update EMMC_THERMISTOR and BUB 3.2V lower limits per data reports. 
+       2/4/2020 TG
+	- Updated and enabled 2.1.0 KEYPAD_IN_ADC_LOAD and 2.3.0 KEYPAD_IN_ISENSE (was 10V_REF_ISENSE).
+	- Added the Green abd Red LED ISENSE tests.
+v1.7 - 2/19/2020 TG
+	- Updated 2.14.0 V2X1_ANT_DIAG
+	- Updated 2.14.1 V2X2_ANT_DIAG
+	- Added 2.15.1 CMP_PWR_CNTL_PATH_ON_V2X1_ANT_DIAG
+	- Added 2.15.1 CMP_PWR_CNTL_PATH_OFF_V2X2_ANT_DIAG
+	- Split link and ping into separate tests
+	- Added Ping test result to log report
+	- Added 2nd Vbatt Sense read w/1s. wait between - Alex test code work around.
+	- Added 2.15.3 CMP_UART_TX_RX - Test is currently disabled by Alex's code.
+v1.8 - 2/19/2020 TG
+	- Updated the 13.1.1 BUB_PRECHARGE_CURRENT -added the command to 
+	  set charge current to 50mA (previously not in the code).
+	- Added a delay and retry of the GREP function when 1st attempt fails. 
+       3/9/2020 DJC
+	- New software .50 requires that test enable be present. Add PS set and relay switch
+ 	- Test PC updated to Windows 10
+v1.9 - 3/10/2020 TG
